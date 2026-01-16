@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AspNetCore.GitHub.Issue65070": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:65079;http://localhost:65080"
+    }
+  }
+}

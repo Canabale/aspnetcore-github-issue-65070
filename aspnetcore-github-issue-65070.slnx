@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+	<File Path=".gitignore" />
+  </Folder>
+  <Folder Name="/src/apps/">
+    <Project Path="src/apps/AspNetCore.GitHub.Issue65070/AspNetCore.GitHub.Issue65070.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,6 @@
+# Ignore generated documentation file
+AspNetCore.GitHub.Issue65070.xml
+
+# Ignore Blazor build artifacts
+wwwroot/dist/
+wwwroot/_framework/
