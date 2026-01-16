@@ -62,7 +62,6 @@ webApplication.UseHttpsRedirection();
 webApplication.UseStaticFiles();
 webApplication.UseRouting();
 webApplication.UseCookiePolicy();
-webApplication.UseSession();
 webApplication.UseAuthentication();
 webApplication.UseAuthorization();
 webApplication.UseAntiforgery();
