@@ -1,0 +1,8 @@
+@namespace AspNetCore.GitHub.Issue65070.Pages.Authenticated
+@inject NavigationManager _navigationManager;
+
+We're forwarding you to your dashboard...
+
+@{
+    this._navigationManager.NavigateTo("/");
+}
