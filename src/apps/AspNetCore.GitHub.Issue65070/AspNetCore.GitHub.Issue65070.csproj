@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup Label="Project Information">
     <Title>GitHub Issue 65070</Title>
     <Description>A project to reproduce the following issue: https://github.com/dotnet/aspnetcore/issues/65070</Description>
@@ -17,6 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Packages">
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="10.0.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="10.0.101">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
