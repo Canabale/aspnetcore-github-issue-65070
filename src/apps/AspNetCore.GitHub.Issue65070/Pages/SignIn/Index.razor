@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+
+@namespace AspNetCore.GitHub.Issue65070.Pages.SignIn
+
+<form action="@EndpointPaths.SignInChallenge" method="post">
+    <AntiforgeryToken/>
+
+    <input type="hidden" name="@nameof(RedirectUri)" value="@this.RedirectUri" />
+    <input name="@(nameof(LoginHint))" value="@this.LoginHint"/>
+
+    <button type="submit">Next</button>
+</form>
