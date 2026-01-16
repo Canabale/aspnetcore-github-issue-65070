@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Mvc.ApplicationParts; 
+
+@namespace AspNetCore.GitHub.Issue65070
+<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(App).Assembly" AdditionalAssemblies="@_additionalAssemblies">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@GetLayout(routeData.PageType)">
+                <Authorizing>
+                    <p>Determining session state, please wait...</p>
+                </Authorizing>
+                <NotAuthorized>
+                    @{
+                        this.NavigationManager.NavigateTo(EndpointPaths.SignIn);
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+    </Router>
+</CascadingAuthenticationState>
