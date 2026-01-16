@@ -1,0 +1,15 @@
+﻿@page "/"
+@namespace AspNetCore.GitHub.Issue65070.Pages
+
+@inject IHttpContextAccessor _httpContextAccessor;
+@inject NavigationManager _navigationManager;
+
+@if(this._httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated == true)
+{
+    <div>You are authenticated.</div>
+}
+else
+{
+    <div>Authentication required...</div>
+    this._navigationManager.NavigateTo(EndpointPaths.SignIn);
+}
