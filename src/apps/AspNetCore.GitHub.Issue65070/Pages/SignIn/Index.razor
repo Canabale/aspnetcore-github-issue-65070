@@ -1,8 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Components.Forms
 
 @namespace AspNetCore.GitHub.Issue65070.Pages.SignIn
-
+@inject AntiforgeryStateProvider antiforgeryStateProvider;
 <form action="@EndpointPaths.SignInChallenge" method="post">
+    @{
+        var token = antiforgeryStateProvider.GetAntiforgeryToken(); // For debugging purposes only.
+    }
     <AntiforgeryToken/>
 
     <input type="hidden" name="@nameof(RedirectUri)" value="@this.RedirectUri" />
