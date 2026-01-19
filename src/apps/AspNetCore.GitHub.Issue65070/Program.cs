@@ -19,7 +19,9 @@ webApplicationBuilder.Services.Configure<CookiePolicyOptions>(options =>
 });
 
 var mvcBuilder = webApplicationBuilder.Services.AddRazorPages();
-var blazorBuilder = webApplicationBuilder.Services.AddServerSideBlazor(options =>
+var blazorBuilder = webApplicationBuilder.Services
+    .AddRazorComponents()
+    .AddInteractiveServerComponents(options =>
 {
     options.DisconnectedCircuitRetentionPeriod = TimeSpan.FromMinutes(5);
     options.DisconnectedCircuitMaxRetained = 100;
@@ -68,7 +70,7 @@ webApplication.UseAntiforgery();
 
 // Map Endpoints
 webApplication.MapControllers();
-webApplication.MapBlazorHub(options => options.CloseOnAuthenticationExpiration = true);
+webApplication.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 webApplication.MapFallbackToPage("/_Host");
 
 // Run the application
